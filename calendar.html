@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <title>Holcombe L. Rucker High School</title>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./bower_components/fullcalendar/dist/fullcalendar.css">
+    <link rel="stylesheet" href="./bower_components/fullcalendar/dist/fullcalendar.print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel='stylesheet' href='./css/font-awesome.min.css'>
+    <script src="./bower_components/moment/moment.js"></script>
+    <script src="./js/jquery-2.1.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./bower_components/fullcalendar/dist/fullcalendar.js"></script>
+    <script src="./js/blocs.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            $('#calendar').fullCalendar({
+                editable: true,
+                weekends: false,
+                eventLimit: true, // allow 'more' link when too many events
+                events: [{
+                        title: 'First Day of School',
+                        start: '2015-09-09'
+                    }, {
+                        title: 'Rosh Hashanah (School Closed)',
+                        start: '2015-09-14',
+                        end: '2015-09-16'
+                    }, {
+                        title: 'Yom Kippur (School Closed)',
+                        start: '2015-09-23'
+                    }, {
+                        title: 'Eid al-Adha (School Closed)',
+                        start: '2015-09-24'
+                    }, {
+                        title: 'Open School Night',
+                        start: '2015-09-30'
+                    }, {
+                        title: 'Colombus Day (School Closed)',
+                        start: '2015-10-12'
+                    }, {
+                        title: 'Election Day (School Closed)',
+                        start: '2015-11-03'
+                    }, {
+                        title: 'Veterans Day (School Closed)',
+                        start: '2015-11-11'
+                    }, {
+                        title: 'Parent Teacher Conferences',
+                        start: '2015-11-20',
+                        end: '2015-11-21'
+                    }, {
+                        title: 'Thanksgiving Recess (School Closed)',
+                        start: '2015-11-26',
+                        end: '2015-11-29'
+                    }, {
+                        title: 'Winter Recess (School Closed)',
+                        start: '2015-12-24',
+                        end: '2016-01-03'
+                    }, {
+                        title: 'Dr. Martin Luther King Day (School Closed)',
+                        start: '2016-01-18'
+                    }, {
+                        title: 'Regents Exams',
+                        start: '2016-01-26',
+                        end: '2016-01-29'
+                    }, {
+                        title: 'Fall Term Ends (No School)',
+                        start: '2016-02-01'
+                    }, {
+                        title: 'Lunar New Year (School Closed)',
+                        start: '2016-02-08'
+                    }, {
+                        title: 'Mid-Winter Recess (School Closed)',
+                        start: '2016-02-15',
+                        end: '2016-02-20'
+                    }, {
+                        title: 'Parent Teacher Conferences',
+                        start: '2016-03-10',
+                        end: '2016-03-11'
+                    }, {
+                        title: 'Good Friday (School Closed)',
+                        start: '2016-03-25'
+                    }, {
+                        title: 'Spring Recess (School Closed)',
+                        start: '2016-04-25',
+                        end: '2016-04-30'
+                    }, {
+                        title: 'Parent Teacher Conferences',
+                        start: '2016-05-10'
+                    }, {
+                        title: 'Memorial Day (School Closed)',
+                        start: '2016-05-30'
+                    }, {
+                        title: 'Anniversary Day (School Closed)',
+                        start: '2016-06-09'
+                    }, {
+                        title: 'Regents Exams',
+                        start: '2016-06-14',
+                        end: '2016-06-23'
+                    }, {
+                        title: 'Regents Rating Day (School Closed)',
+                        start: '2016-06-23'
+                    }, {
+                        title: 'Last Day of School!',
+                        start: '2016-06-28'
+                    },
+
+                ]
+            });
+        });
+        if ($(windw).width() < 1280)
+            $('html').css('zoom', '80%');
+    </script>
+</head>
+
+<body>
+    <!-- bloc-border -->
+    <div class="bloc-border"></div>
+    <!-- Main container -->
+    <div class="page-container">
+
+        <!-- Navigation Bloc -->
+        <div class="sc-content">
+            <div class="bloc bgc-white l-bloc" id="nav-bloc">
+                <div class="container bloc-sm">
+                    <nav class="navbar row">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="index.html"><img src="img/logo3.jpg" alt="logo" /></a>
+                            <button id="nav-toggle" type="button" class="ui-navbar-toggle navbar-toggle" data-toggle="collapse" data-target=".navbar-1">
+                                <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse navbar-1">
+                            <ul class="site-navigation nav navbar-nav">
+                                <li>
+                                    <a href="index.html" class="wild-blue">Home</a>
+                                </li>
+                                <li>
+                                    <a class="wild-blue" href="message.html">Principal&rsquo;s Message</a>
+                                </li>
+                                <li>
+                                    <a class="wild-blue" href="about.html">About</a>
+                                </li>
+                                <li>
+                                    <a class="wild-blue" href="faculty.html">Faculty</a>
+                                </li>
+                                <li>
+                                    <a class="wild-blue" href="students.html">Students</a>
+                                </li>
+                                <li>
+                                    <a class="wild-blue" href="partnerships.html">Partnerships</a>
+                                </li>
+                                <li>
+                                    <a class="wild-blue" href="gallery.html">Gallery</a>
+                                </li>
+                                <li>
+                                    <a class="wild-blue" href="calendar.html">Calendar</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navigation Bloc END -->
+
+        <!-- bloc-6 -->
+        <div class="bloc bgc-white l-bloc" id="bloc-6">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="text-center mg-md">
+					2015-2016 Academic School Year
+					<hr class="wild-blue">
+                </h2>
+                        <div id="calendar"></div>
+                        <div id="download">
+                            <a href="201516SchoolYearCalendarFamilyFriendly_Revised.pdf" download="calendar">Download</a> the calendar to your desktop or mobile device!
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-6 END -->
+
+        <!-- Footer - bloc-9 -->
+        <div class="bloc bgc-white" id="bloc-9">
+            <div class="container bloc-sm">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h2 class="mg-md text-center tc-vivid-burgundy">
+					Contact Us
+				</h2>
+                        <h4 class="mg-md text-left text-center">
+					Holcombe L. Rucker High School
+				</h4>
+                        <p class="text-center">
+                            965 Longwood Ave.
+                            <br />Bronx, NY 10459
+                            <br />Main Phone - (718) 860-1053
+                            <br />Fax - (718) 860-1321
+                            <br />Email - <a class="wild-blue" href="mailto:dcarthan@holcombelrucker.com">Contact Me</a>
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="img/crest-logo.jpg" class="center-block img-frame" width="250" height="300" />
+                    </div>
+                    <div class="col-sm-4">
+                        <h3 class="mg-md text-left text-center tc-vivid-burgundy">
+					Follow On Social Media
+				</h3>
+                        <p class="text-center">
+                            <i class="fa fa-twitter fa-3x"></i><a href="https://twitter.com/theruckerschool" target="_blank">@TheRuckerSchool</a>
+                            <br>
+                            <i class="fa fa-instagram fa-3x"></i><a href="https://www.instagram.com/theruckerschool/" target="_blank"> @TheRuckerSchool</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer - bloc-9 END -->
+    </div>
+    <!-- Main container END -->
+</body>
+
+<!-- Google Analytics -->
+
+<!-- Google Analytics END -->
+
+</html>

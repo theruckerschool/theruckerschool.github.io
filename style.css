@@ -1,0 +1,867 @@
+/*-----------------------------------------------------------------------------------
+        Rucker High School
+-----------------------------------------------------------------------------------*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #FFF;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+a,
+button {
+    outline: none!important;
+}
+
+/* Prevent ugly blue glow on chrome and safari */
+
+
+/* Globals type styling */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+.btn,
+a {
+    font-family: "Helvetica";
+    color: #1F2124;
+}
+h2.bloc-ethos {
+    font-size: 3.5em;
+    color: #93B1CF!important;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 60px;
+}
+
+h2.bloc-ethos:hover {
+    color: #9B1B32!important;
+    cursor: default;
+}
+b {
+    color: #9b1b32;
+}
+hr {
+    background-color: #9B1B32;
+    height: 2px;
+    width: auto;
+}
+hr.wild-blue {
+    background-color: #93B1CF;
+    height: 2px;
+}
+
+/* Site container width */
+
+.container {
+    max-width: 1170px;
+}
+
+/* Calendar type styling */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin: 0 auto;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.view-calendar-bloc  tr.odd {
+    background: 0;
+    border: 0;
+}
+
+.view-calendar-bloc a {
+    margin: 0 0 0 15px;
+    line-height: 135%;
+    display: block;
+}
+
+tr.even, tr.odd {
+    background-color: #fff;
+    padding: 0.1em 0.6em;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+}
+
+.date {
+    border-radius: 4px;
+    border: 2px solid #93B1CF;
+    font-family: 'Merriweather', sans-serif;
+    padding: .75em;
+    float: none;
+    display: inline-block;
+    color: #000;
+    margin: 1.5px;
+}
+
+.month {
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 120%;
+    font-family: 'Merriweather', sans-serif;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+}
+
+.day {
+    background: 0;
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+    font-family: 'Merriweather', sans-serif;
+    font-weight: 400;
+}
+
+.year {
+    background: 0;
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+    font-family: 'Merriweather', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+td a {
+    font-size: 16px;
+    margin: 5px;
+    font-weight: 300;
+    text-align: center;
+}
+
+td a:hover {
+    color: #93B1CF!important;
+}
+
+#calendar {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#download {
+    font-size: 16px;;
+    text-align: center;
+    margin-top: 10px;
+}
+/* Twitter type styling */
+.bloc-twitter {
+    color: inherit;
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+    height: auto;
+}
+
+.bloc-tw-feed {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Merriweather', sans-serif;
+    line-height: .5em;
+}
+
+.bloc-tw-feed a {
+    color: #000;
+    text-decoration: none;
+}
+
+.bloc-tw-feed a:hover {
+    color: #93B1CF!important;
+}
+
+/* News */
+
+.bloc-views-news {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.bloc-view-content {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.bloc-view-content a {
+    font-size: 1.4em;
+    width: 90%;
+}
+
+.bloc-view-content p {
+    font-size: 1.2em;
+}
+
+.bloc-views-row-1 {
+    border-bottom: 2px solid #93B1CF;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 20px;
+}
+
+.bloc-views-row-2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 20px;
+}
+
+/* = Blocs
+-------------------------------------------------------------- */
+
+.bloc {
+    width: 100%;
+    clear: both;
+    background: 50% 50% no-repeat;
+    padding: 0 50px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+.bloc .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Sizes */
+
+.bloc-lg {
+    padding: 100px 50px;
+}
+.bloc-sm {
+    padding: 20px 50px;
+}
+
+/* Background Styles */
+
+.bg-center,
+.bg-l-edge,
+.bg-r-edge,
+.bg-t-edge,
+.bg-b-edge,
+.bg-tl-edge,
+.bg-bl-edge,
+.bg-tr-edge,
+.bg-br-edge,
+.bg-repeat {
+    -webkit-background-size: auto!important;
+    -moz-background-size: auto!important;
+    -o-background-size: auto!important;
+    background-size: auto!important;
+}
+.bg-repeat {
+    background: repeat;
+}
+
+/* Light theme */
+
+.l-bloc {
+    color: rgba(0, 0, 0, .5);
+}
+.l-bloc button:hover {
+    color: rgba(0, 0, 0, .7);
+}
+.l-bloc h1,
+.l-bloc h2,
+.l-bloc h3,
+.l-bloc h4,
+.l-bloc h5,
+.l-bloc h6,
+.l-bloc .ico {
+    color: rgba(0, 0, 0, .7);
+}
+.l-bloc .icon-round,
+.l-bloc .icon-square,
+.l-bloc .icon-rounded,
+.l-bloc .icon-semi-rounded-a,
+.l-bloc .icon-semi-rounded-b {
+    border-color: rgba(0, 0, 0, .7);
+}
+.l-bloc .divider-h span {
+    border-color: rgba(0, 0, 0, .1);
+}
+.l-bloc a {
+    color: #9b1b32;
+    font-weight: bold;
+}
+.l-bloc a:hover {
+    color: rgba(0, 0, 0, 1);
+}
+.l-bloc .navbar-toggle .icon-bar {
+    color: rgba(0, 0, 0, .6);
+}
+.l-bloc .btn-wire,
+.l-bloc .btn-wire:hover {
+    color: rgba(0, 0, 0, .7);
+    border-color: rgba(0, 0, 0, .3);
+}
+
+/* Row Margin Offsets */
+
+.voffset {
+    margin-top: 30px;
+}
+
+/* Bloc text custom styling */
+
+#bloc-2 p {
+    line-height: 20px;
+}
+
+/* = NavBar
+-------------------------------------------------------------- */
+
+.navbar {
+    margin-bottom: 0;
+    z-index: 1;
+}
+.navbar-brand {
+    height: auto;
+    padding: 15px 15px;
+    font-size: 25px!important;
+    font-weight: normal;
+    font-weight: 600;
+}
+.navbar-brand img {
+    max-height: 200px;
+    margin: 0 5px 0 0;
+    display: inline;
+}
+.navbar-brand {
+    padding: 15px 15px;
+}
+.navbar .nav {
+    padding-top: 2px;
+    margin-right: -16px;
+    float: right;
+    z-index: 1;
+}
+.nav > li {
+    float: left;
+    margin-top: 4px;
+    font-size: 16px;
+}
+.navbar-nav .open .dropdown-menu > li > a {
+    text-align: inherit;
+}
+.nav > li a:hover,
+.nav > li a:focus {
+    background: transparent;
+}
+.navbar-toggle {
+    margin: 10px 10px 0 0;
+    border: 0px;
+}
+.navbar-toggle:hover {
+    background: transparent!important;
+}
+.navbar-toggle .icon-bar {
+    background-color: rgba(0, 0, 0, .5);
+    width: 26px;
+}
+
+/* Inverted navbar */
+
+.nav-invert .navbar .nav {
+    float: left;
+}
+.nav-invert .navbar-header,
+.nav-invert .navbar-brand {
+    float: right;
+}
+@media (min-width: 768px) {
+    .site-navigation {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translate(0, -50%);
+        -webkit-transform: translateY(-50%);
+    }
+    .nav-invert .site-navigation {
+        left: 20px;
+        right: 0;
+    }
+    .nav-center {
+        text-align: center;
+    }
+    .nav-center .navbar-header {
+        width: 100%;
+    }
+    .nav-center .navbar-header,
+    .nav-center .navbar-brand,
+    .nav-center .nav > li {
+        float: none;
+        display: inline-block;
+    }
+    .nav-center .site-navigation {
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+.nav > li > .dropdown a {
+    background: none!important;
+    display: block;
+    padding: 14px 15px;
+}
+nav .caret {
+    margin: 0 5px;
+}
+
+/* = Bric adjustment margins
+-------------------------------------------------------------- */
+
+.mg-sm {
+    margin-top: -20px;
+    margin-bottom: 5px;
+}
+.mg-md {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.mg-lg {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+img.mg-sm,
+img.mg-md,
+img.mg-lg {
+    margin-top: 0;
+}
+img.mg-sm {
+    margin-bottom: 10px;
+}
+img.mg-md {
+    margin-bottom: 30px;
+}
+img.mg-lg {
+    margin-bottom: 50px;
+}
+
+/* = Buttons
+-------------------------------------------------------------- */
+
+.btn {
+    margin: 0 5px 5px 0;
+}
+.btn.pull-right {
+    margin: 0 0 5px 5px;
+}
+.btn-d,
+.btn-d:hover,
+.btn-d:focus {
+    color: #FFF!important;
+    background: rgba(0, 0, 0, .3);
+}
+
+/* Prevent ugly blue glow on chrome and safari */
+
+button {
+    outline: none!important;
+}
+.dropdown a .caret {
+    margin: 0 0 0 5px
+}
+
+/* Image Frame */
+
+.img-frame,
+.img-frame-md,
+.img-frame-lg,
+.img-frame-rd,
+.img-frame-rd-md,
+.img-frame-rd-lg {
+    background: #FFF;
+    padding: 4px;
+}
+.img-frame {
+    border-radius: 3px;
+}
+.img-frame-md,
+.img-frame-lg {
+    border-radius: 6px;
+}
+.img-frame-md,
+.img-frame-rd-md {
+    padding: 8px;
+}
+.img-frame-lg,
+.img-frame-rd-lg {
+    padding: 14px;
+}
+
+/* = Text & Icon Styles
+-------------------------------------------------------------- */
+.panel-sq,
+.panel-sq .panel-heading,
+.panel-sq .panel-footer {
+    border-radius: 0;
+}
+.panel-rd {
+    border-radius: 30px;
+}
+.panel-rd .panel-heading {
+    border-radius: 29px 29px 0 0;
+}
+.panel-rd .panel-footer {
+    border-radius: 0 0 29px 29px;
+}
+.fa-twitter:hover,
+.fa-instagram:hover {
+    color: #9b1b32;
+}
+
+/* Empty space fillers - Used on empty blocs to fill them out */
+
+.empty-column,
+.empty-column.thin {
+    width: 100%;
+    height: 350px;
+    display: inline-block;
+}
+.empty-column {
+    height: 350px;
+}
+.empty-column.thin {
+    height: 150px;
+}
+
+/* iFrame */
+
+iframe {
+    border: 0;
+}
+.bloc-border {
+    width: 100%;
+    height: 20px;
+    background-color: #9b1b32;
+}
+
+/* = Carousel
+-------------------------------------------------------------- */
+
+.carousel-control span {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+}
+.carousel-control {
+    color: #FFF!important;
+    text-shadow: none;
+}
+.carousel-indicators li {
+    margin: 0 4px;
+}
+.carousel-indicators .active {
+    margin: 0 4px -1px;
+}
+.carousel-inner {
+    height: 450px;
+}
+
+/* = Custom Colour Styling
+-------------------------------------------------------------- */
+
+
+/* Background colour styles */
+
+.bgc-white {
+    background-color: #FFFFFF;
+}
+
+/* Text colour styles */
+
+.tc-vivid-burgundy {
+    color: #9B1B32!important;
+}
+
+/* Link colour styles */
+
+.wild-blue {
+    color: #93B1CF!important;
+}
+.wild-blue:hover {
+    color: #93B1CF!important;
+}
+
+/* = Mobile adjustments 
+-------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .bloc {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    h2.bloc-ethos {
+    font-size: 2.5em;
+    color: #93B1CF!important;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 10px;
+    }
+    .bloc-twitter {
+        text-align: center;
+    }
+    .bloc-twit-icon {
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+    .b-parallax {
+        background-attachment: scroll;
+    }
+    .page-container,
+    #hero-bloc {
+        overflow-x: hidden;
+        position: relative;
+    }
+    .bloc-twitter {
+        text-align: center;
+    }
+    .bloc-twit-icon {
+        text-align: center;
+    }
+    .bloc-tw-feed a:hover {
+    color: #93B1CF!important;
+    }
+    /* Prevent unwanted side scroll on mobile */
+    
+}
+@media (max-width: 767px) {
+    .page-container {
+        overflow-x: hidden;
+        position: relative;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        padding-left: 10px!important;
+        padding-right: 10px!important;
+    }
+    h2.bloc-ethos {
+    font-size: 2.5em;
+    color: #93B1CF!important;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 10px;
+    }
+    
+    .bloc-twitter {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .bloc-twit-icon {
+        text-align: center;
+        margin: 0 auto;
+    }
+    #hero-bloc h1 {
+        font-size: 40px;
+    }
+    #hero-bloc h2 {
+        font-size: 34px;
+    }
+    #hero-bloc h3 {
+        font-size: 25px;
+    }
+    .bloc {
+        padding-left: 0;
+        padding-right: 0;
+        -webkit-background-size: auto 200%;
+        -moz-background-size: auto 200%;
+        -o-background-size: auto 200%;
+        background-size: auto 200%;
+    }
+    .b-parallax {
+        background-attachment: scroll;
+    }
+    .navbar .nav {
+        padding-top: 0;
+        border-top: 1px solid rgba(0, 0, 0, .2);
+        float: none!important;
+    }
+    .navbar.row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .site-navigation {
+        position: inherit;
+        transform: none;
+        -webkit-transform: none;
+        -ms-transform: none;
+    }
+    .nav > li {
+        margin-top: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        background: rgba(0, 0, 0, .05);
+        text-align: left;
+        padding-left: 15px;
+        width: 100%;
+    }
+    .nav > li:hover {
+        background: rgba(0, 0, 0, .08);
+    }
+    #hero-bloc .navbar .nav {
+        background: rgba(0, 0, 0, .8);
+    }
+    #hero-bloc .navbar .nav a {
+        color: rgba(255, 255, 255, .6);
+    }
+    .hero {
+        padding: 50px 0;
+    }
+    .hero-nav {
+        left: -1px;
+        right: -1px;
+    }
+    .navbar-collapse {
+        padding: 0;
+        overflow-x: hidden;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    .navbar-brand img {
+        max-height: 40px;
+        width: auto;
+        margin: -10px 10px 0 0;
+    }
+    .nav-invert .navbar-header {
+        float: none;
+        width: 100%;
+    }
+    .nav-invert .navbar-toggle {
+        float: left;
+    }
+    .btn.pull-left,
+    .btn.pull-right {
+        float: none!important;
+    }
+    .bloc-group .bloc {
+        display: block;
+        width: 100%;
+    }
+    .bloc-tile-2 .container,
+    .bloc-tile-3 .container,
+    .bloc-tile-4 .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .bloc-xxl,
+    .bloc-xl,
+    .bloc-lg {
+        padding: 40px 0;
+    }
+    .bloc-sm,
+    .bloc-md {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .a-block {
+        padding: 0 10px;
+    }
+    .btn-dwn {
+        display: none;
+    }
+    .voffset {
+        margin-top: 5px;
+    }
+    .voffset-md {
+        margin-top: 20px;
+    }
+    .voffset-lg {
+        margin-top: 30px;
+    }
+    form {
+        padding: 5px;
+    }
+    .close-lightbox {
+        display: inline-block;
+    }
+    .col-xs-2,
+    .col-sm-2,
+    .col-md-2,
+    .col-lg-2,
+    .col-xs-3,
+    .col-sm-3,
+    .col-md-3,
+    .col-lg-3,
+    .col-xs-4,
+    .col-sm-4,
+    .col-md-4,
+    .col-lg-4,
+    .col-xs-5,
+    .col-sm-5,
+    .col-md-5,
+    .col-lg-5,
+    .col-xs-6,
+    .col-sm-6,
+    .col-md-6,
+    .col-lg-6,
+    .col-xs-7,
+    .col-sm-7,
+    .col-md-7,
+    .col-lg-7,
+    .col-xs-8,
+    .col-sm-8,
+    .col-md-8,
+    .col-lg-8,
+    .col-xs-9,
+    .col-sm-9,
+    .col-md-9,
+    .col-lg-9,
+    .col-xs-10,
+    .col-sm-10,
+    .col-md-10,
+    .col-lg-10,
+    .col-xs-11,
+    .col-sm-11,
+    .col-md-11,
+    .col-lg-11,
+    .col-xs-12,
+    .col-sm-12,
+    .col-md-12,
+    .col-lg-12 {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .video-bg-contianer {
+        display: none;
+    }
+    .carousel-inner {
+        height: 250px;
+    }
+}
